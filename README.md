@@ -1,14 +1,26 @@
-# The-Foodie-Guide
-We created this project as a tool to search for the best places to eat locally -restaurants, pubs and bars. What makes us different from the most popular reviews websites is that here you can find nutritional information and accurate and updated prices. Find the most variate and complete list of places, togheather with the exact location in just one place! 
+# The Foodie Guide
+
+We created this project as a tool to search for the best recipes based on my craving. What makes us different is that here you can find nutritional information and recipes based on one particual item ( bread for example) or a whole meak (Pasta alla Gricia for exmample). On top of that, you can search for a random meal if you do not know what you want, a video on how to make that meal will also be avaible to the user.
 
 # Usage
-Simply fill in the area where you are in the search bar and a list of the best restaurants will appear. You can add more filters such as type of food and opening hours. 
+Simply fill in the food or ingredient you are craving in the search bar and a list of the best recipes will appear, with calorie counts per recipe. There will be a 2nd feature allowing to request a random recipe, this feature also comes with a video suggestion on how to make the recipe.
 
-# Authors 
-Amdalat Jinadu, Alhassan DumbuyA, Giuliana Castillo & Fiona Lai
+# Group Info
+Pod 1 Group C
+Group Name - AGFA
+Project Name - The Foodie Guide
 
- 
+# User Story
+AS A User
+I WANT a tool to search for my cravings. The tool should then return a suggested recipe. The tool will also give nutrition value of those recipes.
+SO THAT I can plan a meal for my cravings and it's nutrition info.
 
+# APIs
+https://developer.edamam.com/edamam-recipe-api
+https://www.themealdb.com/meal.php?c=52777
+developer.edamam.comdeveloper.edamam.com
+A Recipe API with 2 Mllion Recipes - Recipe Search API - Edamam
+Edamam - API developer portal for Nutrition Analysis, Food Database Lookup, Recipe Search API and others. Check out Over 2 Mllion Recipes from the Recipe Search API.
 
 # License
  This project is licensed under the MIT License - see the LICENSE.md file for details
