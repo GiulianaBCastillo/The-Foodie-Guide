@@ -5,7 +5,9 @@ $("#random-meal").on("click", function () {
   //
   $.ajax({
     url: queryURL,
-    method: "GET".then(function (response) {
+    method: "GET"
+  })
+    .then(function (response) {
       console.log(response); //response from url
       console.log(response.meals[0]); // meal array
       console.log(response.meals[0].strMeal); //name of the meal
@@ -18,6 +20,6 @@ $("#random-meal").on("click", function () {
       let iFrame = document.createElement("iframe");
       iFrame.src = vidSource;
       document.body.appendChild(iFrame);
-    }),
+    
   });
 });
