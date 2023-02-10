@@ -14,13 +14,21 @@ $("#random-meal").on("click", function () {
       console.log(response.meals[0]); 
       //name of the meal
       console.log(response.meals[0].strMeal); 
-      let randomMeal = 'Your random meal is : ' + response.meals[0].strMeal
+      let randomMeal = 'Your random meal is : ' + response.meals[0].strMeal + ' ' +  "👏" + "👏" + "😍" ;
       console.log(randomMeal);
+      // recipe steps
+      let cookingInstructions = response.meals[0].strInstructions; 
+      console.log(cookingInstructions);
+      // meal image
+      let mealImage = response.meals[0].strMealThumb;
+      var randomMealimage = $('<img/>');
+      randomMealimage .attr('src', mealImage);
+      randomMealimage.attr('width', 300);
+      randomMealimage.attr('height', 300);
+    console.log(randomMealimage );
+      randomMealimage.appendTo('#images');
 
 
-
-
-    //   console.log(response.meals[0].strInstructions); // recipe steps
     //   console.log(response.meals[0].strYoutube); // video link for the meal
     //   let videoId = response.meals[0].strYoutube.split("="); //using the split function to get url and the vid id number
     //   console.log(videoId);
