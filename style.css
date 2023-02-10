@@ -1,0 +1,27 @@
+.page-title {
+    display: flex;
+    color:whitesmoke;
+    align-items: center;
+    justify-content: center;
+    padding-top: 280px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 70px;
+
+}
+
+.row row-cols-lg-auto g-3 align-items-center {
+    display:flex;
+    height: 300px;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.form-check-label {
+    color: white;
+}
+
+.navbar {
+    background-color: darkgray;
+}
+
