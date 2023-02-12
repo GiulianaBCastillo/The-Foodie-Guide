@@ -11,13 +11,42 @@
       integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
       crossorigin="anonymous"
     />
-    <link href="style.css" src="/style.css" />
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <button id="random-meal">Random meal></button>
 
     <section id="randomMealOption">
-      <div class="food-info">
+      <h2 class="random-meal-name">
+        Your random meal is: <span id="meal-title">Name of meal</span>
+      </h2>
+      <div class="container text-center random-meal-info">
+        <div class="row">
+          <div class="col">
+            <img src="" alt="" id="random-meal-img" width="300" height="300" />
+          </div>
+          <div id="ramdom-meal-video" class="col random-meal-video"></div>
+        </div>
+        <div class="row">
+          <div id="random-meal-ingredients" class="col">
+            <div class="row">
+              <div class="col">
+                <h3>Measurement</h3>
+                <ul id="randomMealMeasurement">
+                </ul>
+              </div>
+              <div class="col">
+                <h3>Ingredient</h3>
+                <ul id="randomMealIngredient">
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div id="random-meal-instructions" class="col">1 of 3</div>
+        </div>
+      </div>
+
+      <!-- <div class="food-info">
         <label for="exampleFormControlInput1" class="form-label"
           >Random Food Option</label8>
         <section id="food-title"></section>
@@ -33,7 +62,7 @@
           <div id="images" class="object-fit-cover border rounded"></div>
         </div>
         <div id="videos" class="col-6 video">.</div>
-      </div>
+      </div> -->
     </section>
 
     <script

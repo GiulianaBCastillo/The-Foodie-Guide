@@ -1,3 +1,14 @@
-#random {
-    border-style: double;
+.random-meal-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* iframe {
+  min-width: 500px !important;
+  min-height: 500px !important;
+} */
+
+ul{
+  list-style: none !important;
 }
