@@ -1,3 +1,4 @@
+
 # The Foodie Guide
 
 We created this project as a tool to search for the best recipes based on my craving. What makes us different is that here you can find nutritional information and recipes based on one particual item ( bread for example) or a whole meak (Pasta alla Gricia for exmample). On top of that, you can search for a random meal if you do not know what you want, a video on how to make that meal will also be avaible to the user.
@@ -37,4 +38,5 @@ https://www.w3schools.com/js/js_variables.asp
 https://rapidapi.com/apidojo/api/the-fork-the-spoon/
 
 https://developers.google.com/maps/documentation/places/web-service/get-api-key
+
 

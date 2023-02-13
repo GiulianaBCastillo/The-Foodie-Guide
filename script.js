@@ -9,7 +9,6 @@ $("#random-meal").on("click", function() {
         console.log(response);
         console.log(response.hits);
         console.log(response.hits[0].recipe.label);
-        console.log("hello")
       });
   });
 
