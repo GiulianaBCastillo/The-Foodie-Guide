@@ -18,9 +18,9 @@
 
     <section id="randomMealOption">
       <h2 class="random-meal-name">
-        Your random meal is: <span id="meal-title">Name of meal</span>
+        Your random meal is: <span id="meal-title"></span>
       </h2>
-      <div class="container text-center random-meal-info">
+      <div class="container text-center random-meal-info" id="randomMealInfo">
         <div class="row">
           <div class="col">
             <img src="" alt="" id="random-meal-img" width="300" height="300" />
@@ -42,7 +42,11 @@
               </div>
             </div>
           </div>
-          <div id="random-meal-instructions" class="col">1 of 3</div>
+          <div id="random-meal-instructions" class="col">
+            <h4>Meal Method</h4>
+            <div class="instructions"></div>
+          </div>
+          
         </div>
       </div>
 

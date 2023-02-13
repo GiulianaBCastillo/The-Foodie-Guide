@@ -3,8 +3,6 @@ let randomMealImage = $("#random-meal-img");
 
 $("#random-meal").on("click", function (e) {
   e.preventDefault();
-  // $(".ramdom-meal-video").empty();
-  //
   var queryURL = "https://www.themealdb.com/api/json/v1/1/random.php";
 
   //
@@ -23,7 +21,6 @@ $("#random-meal").on("click", function (e) {
 
     // console.log(response.meals[0].strMeal);
     let randomMeal =
-      "Your random meal is : " +
       response.meals[0].strMeal +
       " " +
       "👏" +
@@ -31,7 +28,7 @@ $("#random-meal").on("click", function (e) {
       "😍";
     // console.log(randomMeal);
     var randomMealtitle = $("<h1></h1>");
-    randomMealtitle.text(randomMeal);
+    randomMealtitle.empty().text(randomMeal);
     randomMealtitle.appendTo("#meal-title");
 
     //ingredient list
@@ -83,124 +80,23 @@ $("#random-meal").on("click", function (e) {
       randomMealIngredients.strIngredient20,
     ];
     randomMealMeasurementArr.forEach((measurement) => {
-      if (measurement !== "") {
+      if (measurement !== "" && measurement !== null) {
         $("#randomMealMeasurement").append(`<li>${measurement}</li>`);
       }
     });
 
     randomMealIngredientsArr.forEach((ingredient) => {
-      if (ingredient !== "") {
+      if (ingredient !== "" && ingredient !== null) {
         $("#randomMealIngredient").append(`<li>${ingredient}</li>`);
       }
     });
 
-    let mealIngredient =
-      response.meals[0].strMeasure1 +
-      " " +
-      response.meals[0].strIngredient1 +
-      " ," +
-      (response.meals[0].strMeasure2 +
-        " " +
-        response.meals[0].strIngredient2 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure3 +
-        " " +
-        response.meals[0].strIngredient3) +
-      (" ," +
-        response.meals[0].strMeasure4 +
-        " " +
-        response.meals[0].strIngredient4 +
-        " ,") +
-      (+" " +
-        response.meals[0].strMeasure5 +
-        " " +
-        response.meals[0].strIngredient5 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure6 +
-        " " +
-        response.meals[0].strIngredient6 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure7 +
-        " " +
-        response.meals[0].strIngredient7 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure8 +
-        " " +
-        response.meals[0].strIngredient8 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure9 +
-        " " +
-        response.meals[0].strIngredient9 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure10 +
-        " " +
-        response.meals[0].strIngredient10 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure11 +
-        " " +
-        response.meals[0].strIngredient11 +
-        " ") +
-      (" ," +
-        response.meals[0].strMeasure12 +
-        " " +
-        response.meals[0].strIngredient12 +
-        " ,") +
-      (+" " +
-        response.meals[0].strMeasure13 +
-        " " +
-        response.meals[0].strIngredient13 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure14 +
-        " " +
-        response.meals[0].strIngredient14 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure15 +
-        " " +
-        response.meals[0].strIngredient15 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure16 +
-        " " +
-        response.meals[0].strIngredient16 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure17 +
-        " " +
-        response.meals[0].strIngredient17) +
-      (" " +
-        response.meals[0].strMeasure18 +
-        " " +
-        response.meals[0].strIngredient18 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure19 +
-        " " +
-        response.meals[0].strIngredient19 +
-        " ,") +
-      (" " +
-        response.meals[0].strMeasure20 +
-        " " +
-        response.meals[0].strIngredient20 +
-        " ,");
+    // console.log(mealIngredient
 
-    // console.log(mealIngredient);
-    let ingredients = $("<secttion/>");
-    ingredients.text("The ingredeients are :" + mealIngredient);
-    ingredients.appendTo(".h4");
-
-    //   // recipe steps
-    //   $(function(cookingInstructions){
-    //     let splitInstructions = response.meals[0].strInstructions
-    //     console.log(splitInstructions);
+    // // recipe steps
+    // $(function(cookingInstruction){
+    //   let splitInstructions = response.meals[0].strInstructions
+    //   console.log(splitInstructions);
 
     //     let new1 = splitInstructions.split('.');
 
@@ -215,9 +111,9 @@ $("#random-meal").on("click", function (e) {
     // });
     let cookingInstructions = response.meals[0].strInstructions;
     // console.log(cookingInstructions);
-    let instructions = $("<section>");
-    instructions.text(cookingInstructions);
-    instructions.appendTo(".p-3");
+    let new1 = cookingInstructions.split(".");
+    console.log(new1);
+    $(".instructions").append(cookingInstructions);
     // console.log(cookingInstructions);
 
     // meal image
@@ -247,4 +143,6 @@ $("#random-meal").on("click", function (e) {
 
     // document.body.div.video.appendChild(iFrame); // appending(adding) the video source on to the html document
   });
+
+  // $("#randomMealInfo").empty();
 });
