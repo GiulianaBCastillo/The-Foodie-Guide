@@ -6,8 +6,9 @@
     padding-top: 280px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 70px;
-
-}
+    margin-top: 30px; 
+} 
+/* test the margin-top pixel above number to see if the wording can be better positioned for all screen sizes and redwonload vs code get instructor to help because the explorer does not work*/
 
 .row row-cols-lg-auto g-3 align-items-center {
     display:flex;
