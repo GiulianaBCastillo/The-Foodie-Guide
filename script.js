@@ -10,16 +10,7 @@ $("#random-meal").on("click", function (e) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    //response from url
-    // console.log(response);
-    // meal array
     let meals = response.meals;
-    // console.log(meals);
-    // console.log(meals[0].strIngredient1);
-
-    //name of the meal
-
-    // console.log(response.meals[0].strMeal);
     let randomMeal =
       response.meals[0].strMeal +
       " " +
@@ -91,24 +82,6 @@ $("#random-meal").on("click", function (e) {
       }
     });
 
-    // console.log(mealIngredient
-
-    // // recipe steps
-    // $(function(cookingInstruction){
-    //   let splitInstructions = response.meals[0].strInstructions
-    //   console.log(splitInstructions);
-
-    //     let new1 = splitInstructions.split('.');
-
-    //     let arrayLength = new1.length;
-    //     console.log(arrayLength);
-    //     for (var i = 0; i < arrayLength; i++) {
-    //         console.log(new1);
-    //     //     //Do something
-
-    //     }
-
-    // });
     let cookingInstructions = response.meals[0].strInstructions;
     // console.log(cookingInstructions);
     let new1 = cookingInstructions.split(".");
@@ -128,12 +101,12 @@ $("#random-meal").on("click", function (e) {
     // randomMealimage.appendTo("#images"); // adding the image to the image div in the html
 
     // creating video link for the meal
-    // console.log(response.meals[0].strYoutube);
+    
     let videoId = response.meals[0].strYoutube.split("="); //using the split function to get url and the vid id number
     // console.log(videoId);
     let vidSource = "https://www.youtube.com/embed/" + videoId[1]; // used the embeded video link url and added the videoID number to call the video
     // console.log(vidSource);
-    let iFrame = $("<iframe>"); // an iframe element is created to display the video on to the webpage
+    let iFrame = $("iframe"); // an iframe element is created to display the video on to the webpage
     // iFrame.src = vidSource; // the iframe src will be the vidSource link
     // document.getElementById(".video").appendChild(iFrame)
     iFrame.attr("src", vidSource);
