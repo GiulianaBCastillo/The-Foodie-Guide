@@ -10,7 +10,7 @@ $("#random-meal").on("click", function (e) {
     url: queryURL,
     method: "GET",
   }).then(function (response) {
-    let meals = response.meals;
+    // let meals = response.meals;
     let randomMeal =
       response.meals[0].strMeal +
       " " +
@@ -18,7 +18,7 @@ $("#random-meal").on("click", function (e) {
       "👏" +
       "😍";
     // console.log(randomMeal);
-    var randomMealtitle = $("<h1></h1>");
+    var randomMealtitle = $("h2");
     randomMealtitle.empty().text(randomMeal);
     randomMealtitle.appendTo("#meal-title");
 
