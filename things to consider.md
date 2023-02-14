@@ -1,0 +1,2 @@
+- The random element doesnt have selectio category. like the user could want a random recipe for a desserts (cakes) or option for something simple like a soup. 
+- Getting the ingredient seems to be challanging. Will need a for loop maybe to cancel out the objects with no array. 
