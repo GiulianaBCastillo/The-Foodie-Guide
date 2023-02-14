@@ -8,19 +8,19 @@ $("#random-meal").on("click", function (e) {
   //
   $.ajax({
     url: queryURL,
-    method: "GET",
-  }).then(function (response) {
-    // let meals = response.meals;
+    method: "GET", // method to get the url
+  }).then(function (response) { 
+    let meals = response.meals;
     let randomMeal =
       response.meals[0].strMeal +
       " " +
       "👏" +
       "👏" +
-      "😍";
+      "😍";   
     // console.log(randomMeal);
     var randomMealtitle = $("h2");
     randomMealtitle.empty().text(randomMeal);
-    randomMealtitle.appendTo("#meal-title");
+    randomMealtitle.appendTo("#meal-title");  
 
     //ingredient list
     let randomMealIngredients = response.meals[0];
