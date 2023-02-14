@@ -1,3 +1,21 @@
+.random-meal-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* iframe {
+  min-width: 500px !important;
+  min-height: 500px !important;
+} */
+
+ul{
+  list-style: none !important;
+}
+
+body {
+    background-color: rgb(222, 222, 89);
+}
 .page-title {
     display: flex;
     color:whitesmoke;
