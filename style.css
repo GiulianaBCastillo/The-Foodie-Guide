@@ -44,3 +44,12 @@ body {
     background-color: darkgray;
 }
 
+.row{
+  color: azure;
+}
+
+.content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
