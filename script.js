@@ -10,16 +10,19 @@ $("#random-meal").on("click", function (e) {
     method: "GET", // method to get the url
   }).then(function (response) {
     let meals = response.meals;
+
     let randomMeal =
       response.meals[0].strMeal +
       " " +
       ":clap:" +
       ":clap:" +
       ":heart_eyes:";
+
     // console.log(randomMeal);
     var randomMealtitle = $("h2");
     randomMealtitle.empty().text(randomMeal);
     randomMealtitle.appendTo("#meal-title");
+
     //ingredient list
     let randomMealIngredients = response.meals[0];
     // console.log(randomMealIngredients);
@@ -94,6 +97,7 @@ $("#random-meal").on("click", function (e) {
     // console.log(randomMealImage);
     // randomMealimage.appendTo("#images"); // adding the image to the image div in the html
     // creating video link for the meal
+
     let videoId = response.meals[0].strYoutube.split("="); //using the split function to get url and the vid id number
     // console.log(videoId);
     let vidSource = "https://www.youtube.com/embed/" + videoId[1]; // used the embeded video link url and added the videoID number to call the video
@@ -109,6 +113,7 @@ $("#random-meal").on("click", function (e) {
   });
   // $("#randomMealInfo").empty();
 });
+
 //Recipe API
 $("#subButton").on("click", function () {
   var userFoodChoice = document.getElementById("userInputField").value;
