@@ -133,11 +133,11 @@ $("#subButton").on("click", function () {
     method: "GET"
   })
     .then(function(response) {
-      console.log(response);
+      // console.log(response);
       let recipes = response.hits;
       for (let i = 0; i < recipes.length-11; i++) {
         let suggestedMealThumbnail = recipes[i].recipe.images.SMALL.url;
-        console.log(suggestedMealThumbnail);
+        // console.log(suggestedMealThumbnail);
         suggestedMealImage.attr("src", suggestedMealThumbnail);
         suggestedMealImage.attr("width", 300);
         suggestedMealImage.attr("height", 300); // having issues with displaying the image 
@@ -148,14 +148,17 @@ $("#subButton").on("click", function () {
         suggestedMealtitle.appendTo("#suggested-meal-title");
 
         let suggestedMealCalorie = recipes[i].recipe.calories + "kcal"; // need to do a split function here 
-        console.log(suggestedMealCalorie);                              //use devision to change the cal value
+        // console.log(suggestedMealCalorie);                              //use devision to change the cal value
         let mealCalorie = $("<p></p>");
         mealCalorie.empty().text(suggestedMealCalorie);
         mealCalorie.appendTo("#suggested-meal-nutrient-info");
 
-
-
-        // console.log(recipes[i].recipe.ingredientLines);
+        
+        let suggestedMealIngredient = recipes[i].recipe.ingredientLines[1]
+        console.log(suggestedMealIngredient);
+        let mealIngredient = $("<div></div>");
+        mealIngredient.empty().text(suggestedMealIngredient);
+        mealIngredient.appendTo("#suggested-meal-Ingreident");
         
         // console.log(recipes[i].recipe.totalTime);
         // let nutrientsinfo = recipes[i].recipe.totalDaily;
