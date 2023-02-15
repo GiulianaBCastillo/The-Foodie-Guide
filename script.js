@@ -1,4 +1,5 @@
 let randomMealImage = $("#random-meal-img");
+let suggestedMealImage = $("#suggested-meal-img")
 // let randomMealVideo = $("#random-meal-video");
 
 $("#random-meal").on("click", function (e) {
@@ -135,14 +136,35 @@ $("#subButton").on("click", function () {
       console.log(response);
       let recipes = response.hits;
       for (let i = 0; i < recipes.length-11; i++) {
-        console.log(recipes[i].recipe.label);
-        console.log(recipes[i].recipe.calories);
-        console.log(recipes[i].recipe.ingredientLines);
-        console.log(recipes[i].recipe.healthLabels);
-        console.log(recipes[i].recipe.totalTime);
-        let nutrientsinfo = recipes[i].recipe.totalDaily;
+        let suggestedMealThumbnail = recipes[i].recipe.images.SMALL.url;
+        console.log(suggestedMealThumbnail);
+        suggestedMealImage.attr("src", suggestedMealThumbnail);
+        suggestedMealImage.attr("width", 300);
+        suggestedMealImage.attr("height", 300); // having issues with displaying the image 
 
-        }
+        let suggestedMeal = recipes[i].recipe.label;
+        let suggestedMealtitle = $("<h1></h1>");
+        suggestedMealtitle.empty().text(suggestedMeal);
+        suggestedMealtitle.appendTo("#suggested-meal-title");
+
+        let suggestedMealCalorie = recipes[i].recipe.calories + "kcal"; // need to do a split function here 
+        console.log(suggestedMealCalorie);                              //use devision to change the cal value
+        let mealCalorie = $("<p></p>");
+        mealCalorie.empty().text(suggestedMealCalorie);
+        mealCalorie.appendTo("#suggested-meal-nutrient-info");
+
+
+
+        // console.log(recipes[i].recipe.ingredientLines);
+        
+        // console.log(recipes[i].recipe.totalTime);
+        // let nutrientsinfo = recipes[i].recipe.totalDaily;
+        // console.log(nutrientsinfo);
+        // for (let i = 0; i < nutrientsinfo.length; i++) {
+        // //   console.log(nutrientsinfo[i]);
+        // }
+        
+         }
         
         
         
