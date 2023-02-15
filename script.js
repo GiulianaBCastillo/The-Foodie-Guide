@@ -119,31 +119,96 @@ $("#random-meal").on("click", function (e) {
 
   // $("#randomMealInfo").empty();
 });
-//Recipe API
-$("#random-meal").on("click", function() {
-    var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&q=pasta&app_id=299b322d&app_key=c2e37f835315905a8c42461585f9c738&ingr=5";
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    })
-      .then(function(response) {
-        console.log(response);
-        console.log(response.hits);
-        console.log(response.hits[0].recipe.label);
-      });
+// //Recipe API
+// $("#random-meal").on("click", function() {
+//     var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&q=pasta&app_id=299b322d&app_key=c2e37f835315905a8c42461585f9c738&ingr=5";
+//     $.ajax({
+//       url: queryURL,
+//       method: "GET"
+//     })
+//       .then(function(response) {
+//         console.log(response);
+//         console.log(response.hits);
+//         console.log(response.hits[0].recipe.label);
+//       });
+//   });
+
+
+/////////Nutrition section///////
+var typeFoodInput = $("foodInput");
+var submitBtn = $("nutrition-valueBtn");
+var food ="";
+var searchFood=[];
+
+///chech the search in local storage
+function find(food){
+  for (var i=0; i<searchFood.length; i++){
+      if(food.toUpperCase()===searchFood[i]){
+          return -1;
+      }
+  }
+  return 1;
+}
+
+// Display the search
+function displaySearch(event){
+  event.preventDefault();
+  if(searchFood.val().trim()!==""){
+      food=searchFood.val().trim();
+      searchResult(food);
+  
+  }
+}
+
+
+ /// Create the AJAX call
+$("#nutrition-valueBtn").on("click", function searchResult(food) {
+  const settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=1%20large%20apple",
+    "method": "GET",
+    "headers": {
+      "X-RapidAPI-Key": "e9088b6dd1mshbce6125990c4c50p1bf0cbjsnf9da49524d18",
+      "X-RapidAPI-Host": "edamam-edamam-nutrition-analysis.p.rapidapi.com"
+    }
+  };
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+
+ //Display the result
+    const calorie= response.calorie;
+    const dietLables=response.dietLables;
+   $("#DisplayCalorie").html(response.calorie);
+   $("#DisplayDietLables").html(response.dietLables);
+
+
   });
 
-  //Nutrition values API
-  $("#nutrition-value").on("click", function () {
-    var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=pasta&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de";
-    $.ajax({
-        url: queryURL,
-        method: "GET"
-    })
-    .then(function(response) {
-        console.log(response);
-        console.log(response.hits);
-        console.log(response.hits[0].recipe);
-        console.log(response.hits[0].recipe.calories);
-    })
-  })
+
+
+})
+
+
+
+  // //Create the AJAX call
+  // $("#nutrition-valueBtn").on("click", function searchResult(food) {
+  //   var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=pasta&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de";
+  //   $.ajax({
+  //       url: queryURL,
+  //       method: "GET"
+  //   })
+  //   .then(function(response) {
+  //       console.log(response);
+  //       console.log(response.hits);
+  //       console.log(response.hits[0].recipe);
+  //       console.log(response.hits[0].recipe.calories);
+  //   })
+  // })
+
+
+
+
+
