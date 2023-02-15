@@ -140,34 +140,36 @@ $("#subButton").on("click", function () {
         // console.log(suggestedMealThumbnail);
         suggestedMealImage.attr("src", suggestedMealThumbnail);
         suggestedMealImage.attr("width", 300);
-        suggestedMealImage.attr("height", 300); // having issues with displaying the image 
+        suggestedMealImage.attr("height", 300); // having issues with displaying the image
 
         let suggestedMeal = recipes[i].recipe.label;
         let suggestedMealtitle = $("<h1></h1>");
         suggestedMealtitle.empty().text(suggestedMeal);
         suggestedMealtitle.appendTo("#suggested-meal-title");
 
-        let suggestedMealCalorie = recipes[i].recipe.calories + "kcal"; // need to do a split function here 
+        let suggestedMealCalorie = recipes[i].recipe.calories + "kcal"; // need to do a split function here
         // console.log(suggestedMealCalorie);                              //use devision to change the cal value
         let mealCalorie = $("<p></p>");
         mealCalorie.empty().text(suggestedMealCalorie);
         mealCalorie.appendTo("#suggested-meal-nutrient-info");
 
-        
-        let suggestedMealIngredient = recipes[i].recipe.ingredientLines[1]
-        console.log(suggestedMealIngredient);
+        let suggestedMealIngredient = recipes[i].recipe.ingredientLines[1];
+        // console.log(suggestedMealIngredient);
         let mealIngredient = $("<div></div>");
         mealIngredient.empty().text(suggestedMealIngredient);
         mealIngredient.appendTo("#suggested-meal-Ingreident");
-        
+
+        let nutrientsinfo = recipes[i].recipe.totalDaily;
+        console.log(nutrientsinfo);
+        // for (let i = 0; i < nutrientsinfo.length-10; i++) {
+        //   console.log(nutrientsinfo);
+
+}
         // console.log(recipes[i].recipe.totalTime);
-        // let nutrientsinfo = recipes[i].recipe.totalDaily;
         // console.log(nutrientsinfo);
-        // for (let i = 0; i < nutrientsinfo.length; i++) {
-        // //   console.log(nutrientsinfo[i]);
+
         // }
-        
-         }
+      //}
         
         
         
