@@ -9,18 +9,13 @@ $("#random-meal").on("click", function (e) {
   $.ajax({
     url: queryURL,
     method: "GET", // method to get the url
-  }).then(function (response) { 
+  }).then(function (response) {
     let meals = response.meals;
-    let randomMeal =
-      response.meals[0].strMeal +
-      " " +
-      "👏" +
-      "👏" +
-      "😍";   
+    let randomMeal = response.meals[0].strMeal + " " + "👏" + "👏" + "😍";
     // console.log(randomMeal);
     var randomMealtitle = $("h2");
     randomMealtitle.empty().text(randomMeal);
-    randomMealtitle.appendTo("#meal-title");  
+    randomMealtitle.appendTo("#meal-title");
 
     //ingredient list
     let randomMealIngredients = response.meals[0];
@@ -101,7 +96,7 @@ $("#random-meal").on("click", function (e) {
     // randomMealimage.appendTo("#images"); // adding the image to the image div in the html
 
     // creating video link for the meal
-    
+
     let videoId = response.meals[0].strYoutube.split("="); //using the split function to get url and the vid id number
     // console.log(videoId);
     let vidSource = "https://www.youtube.com/embed/" + videoId[1]; // used the embeded video link url and added the videoID number to call the video
@@ -133,82 +128,106 @@ $("#random-meal").on("click", function (e) {
 //       });
 //   });
 
-
 /////////Nutrition section///////
 var typeFoodInput = $("foodInput");
 var submitBtn = $("nutrition-valueBtn");
-var food ="";
-var searchFood=[];
+var food = "";
+var searchFood = [];
 
-///chech the search in local storage
-function find(food){
-  for (var i=0; i<searchFood.length; i++){
-      if(food.toUpperCase()===searchFood[i]){
-          return -1;
-      }
+///Check the search in local storage
+function find(food) {
+  for (var i = 0; i < searchFood.length; i++) {
+    if (food.toUpperCase() === searchFood[i]) {
+      return -1;
+    }
   }
   return 1;
 }
 
 // Display the search
-function displaySearch(event){
+function displaySearch(event) {
   event.preventDefault();
-  if(searchFood.val().trim()!==""){
-      food=searchFood.val().trim();
-      searchResult(food);
-  
+  if (searchFood.val().trim() !== "") {
+    food = searchFood.val().trim();
+    searchResult(food);
   }
 }
 
-
- /// Create the AJAX call
+/// Create the AJAX call
 $("#nutrition-valueBtn").on("click", function searchResult(food) {
   const settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=1%20large%20apple",
-    "method": "GET",
-    "headers": {
+    async: true,
+    crossDomain: true,
+    url: "https://edamam-edamam-nutrition-analysis.p.rapidapi.com/api/nutrition-data?ingr=1%20large%20apple",
+    method: "GET",
+    headers: {
       "X-RapidAPI-Key": "e9088b6dd1mshbce6125990c4c50p1bf0cbjsnf9da49524d18",
-      "X-RapidAPI-Host": "edamam-edamam-nutrition-analysis.p.rapidapi.com"
-    }
+      "X-RapidAPI-Host": "edamam-edamam-nutrition-analysis.p.rapidapi.com",
+    },
   };
-  
+
   $.ajax(settings).done(function (response) {
     console.log(response);
 
-
- //Display the result
-    const calorie= response.calorie;
-    const dietLables=response.dietLables;
-   $("#DisplayCalorie").html(response.calorie);
-   $("#DisplayDietLables").html(response.dietLables);
-
-
+    //Display the result
+    const calorie = response.calorie;
+    const dietLables = response.dietLables;
+    $("#DisplayCalorie").html(response.calorie);
+    $("#DisplayDietLables").html(response.dietLables);
   });
+});
 
+// //Create the AJAX call
+// $("#nutrition-valueBtn").on("click", function searchResult(food) {
+//   var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=pasta&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de";
+//   $.ajax({
+//       url: queryURL,
+//       method: "GET"
+//   })
+//   .then(function(response) {
+//       console.log(response);
+//       console.log(response.hits);
+//       console.log(response.hits[0].recipe);
+//       console.log(response.hits[0].recipe.calories);
+//   })
+// })
 
+let favouriteFood;
+//example = pizza
+function addFavouriteFood() {
+  let food = document.getElementById("foodInput").value;
+  favouriteFood.push(food);
+  //document.index[0].reset(); //to clear the input from next entries
 
-})
+  localStorage.setItem("foodItems", JSON.stringify(favouriteFood));
+}
+// Retrieve
+//document.getElementById("foodInput").innerHTML =
+//localStorage.getItem("foodInput");
 
+document.addEventListener("DOMContentLoaded", () => {
+  document
+    .getElementById("nutrition-valueBtn")
+    .addEventListener("click", addFavouriteFood);
+});
 
-
-  // //Create the AJAX call
-  // $("#nutrition-valueBtn").on("click", function searchResult(food) {
-  //   var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=pasta&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de";
-  //   $.ajax({
-  //       url: queryURL,
-  //       method: "GET"
-  //   })
-  //   .then(function(response) {
-  //       console.log(response);
-  //       console.log(response.hits);
-  //       console.log(response.hits[0].recipe);
-  //       console.log(response.hits[0].recipe.calories);
-  //   })
-  // })
-
-
-
-
-
+function getFromLocalStorage() {
+  localStorageItems = JSON.parse(localStorage.getItem("foodItems"));
+  if (localStorageItems) {
+    console.log(localStorageItems);
+    favouriteFood = localStorageItems;
+  } else {
+    favouriteFood = [];
+  }
+  renderLocalStorage ()
+}
+getFromLocalStorage();
+function renderLocalStorage () {
+let foodItemDiv = document.getElementById("localStorageFoodItems");
+for (let i = 0; i < favouriteFood.length; i++) {
+  let foodItem = document.createElement("div")
+  foodItem.textContent = favouriteFood[i]
+  foodItemDiv.append(foodItem)
+  console.log(favouriteFood[i])
+}
+}
