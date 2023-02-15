@@ -223,5 +223,11 @@ function getFromLocalStorage() {
 }
 getFromLocalStorage();
 function renderLocalStorage () {
-
+let foodItemDiv = document.getElementById("localStorageFoodItems");
+for (let i = 0; i < favouriteFood.length; i++) {
+  let foodItem = document.createElement("div")
+  foodItem.textContent = favouriteFood[i]
+  foodItemDiv.append(foodItem)
+  console.log(favouriteFood[i])
+}
 }
