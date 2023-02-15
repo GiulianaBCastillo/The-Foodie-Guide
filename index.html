@@ -48,59 +48,19 @@
           </div>
         </div>
       </nav>
-    <h1 class="page-title">What do you feel like eating?</h1>
-    <!--Buttons-->
-  <div class="container-fluid" id="content">
-    <button id="random-meal" class="meal btn btn-primary">Random meal</button>
-      <section id="randomMealOption">
-      <h2 class="random-meal-name text-white">
-        Your random meal is: <span id="meal-title"></span>
-      </h2>
-      <div class="container text-center random-meal-info" id="randomMealInfo">
-        <div class="row">
-          <div class="col">
-            <img src="" alt="" id="random-meal-img" width="300" height="300" />
-          </div>
-          <iframe id="ramdom-meal-video" class="col random-meal-video">
-          </iframe> 
-        </div>
-        <div class="row">
-          <div id="random-meal-ingredients" class="col">
-            <div class="row">
-              <div class="col">
-                <h4>Measurement</h4>
-                <ul id="randomMealMeasurement">
-                </ul>
-              </div>
-              <div class="col">
-                <h5>Ingredient</h5>
-                <ul id="randomMealIngredient">
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div id="random-meal-instructions" class="col">
-            <h4>Meal Method</h4>
-            <div class="instructions"></div>
-          </div>
-          
-        </div>
-      </div>
     <!--Index field-->
-
   <div class='wrapper'>
     <form id='userForm'>
       <div class='user-input'>
-        <h1 class="page-title">what would you like to eat?</h1>
-        <input id='userInputField' type='text' maxlength='25' placeholder="Type your here"></input>
-     </div>
-      <div class='form-sub'>
-        <button id='subButton' type='button' class="meal btn btn-primary">Search!</button>
-      </div>
+        <h1 class="page-title">What would you like to eat?</h1>
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" id="userInputField" placeholder="Type it here" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="subButton" id='subButton'>Search</button>
+          </div>
+        </div>
     </form>
 <div>
-
-
   <!-- Suggested meal field -->
   <div id="suggested-meal-options" class="container text-center">
     <h2 class="suggested-meal-name">
@@ -108,17 +68,53 @@
       </h2>
   <div id="meal-image meal-info"  class="row">
     <img src="" alt="" id="suggested-meal-img" width="300" height="300" />
-    <div id="suggested-meal-nutrient-info" class="col-6 col-sm-3">.col-6 .col-sm-3</div>
-
+    <div id="suggested-meal-nutrient-info" class="col-6 col-sm-3">Nutrients</div>
     <!-- Force next columns to break to new line -->
     <div class="w-100"></div>
-
-    <div id="suggested-meal-Ingreident" class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
     <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
   </div>
 </div>
-
-    
+<!-- Random meal-> -->
+    <div class="container-fluid" id="content">
+      <h1 class="page-title">What do you feel like eating?</h1>
+      <div class="input-group mb-3">
+          <button id="random-meal" class="meal form-control btn btn-primary" aria-label="Default" aria-describedby="inputGroup-sizing-default">Random meal</button>
+      </div>
+      <section id="randomMealOption">
+        <h2 class="random-meal-name text-white">
+          Your random meal is: <span id="meal-title"></span>
+        </h2>
+        <div class="container text-center random-meal-info" id="randomMealInfo">
+          <div class="row">
+            <div class="col">
+              <img src="" alt="" id="random-meal-img" width="300" height="300" />
+            </div>
+            <iframe id="ramdom-meal-video" class="col random-meal-video">
+            </iframe>
+          </div>
+          <div class="row">
+            <div id="random-meal-ingredients" class="col">
+              <div class="row">
+                <div class="col">
+                  <h4>Measurement</h4>
+                  <ul id="randomMealMeasurement">
+                  </ul>
+                </div>
+                <div class="col">
+                  <h5>Ingredient</h5>
+                  <ul id="randomMealIngredient">
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div id="random-meal-instructions" class="col">
+              <h4>Meal Method</h4>
+              <div class="instructions"></div>
+            </div>
+          </div>
+        </div>
+      </div>
   </body>
    <!--Card: About us-->
     <div class="card" id="About-us">
@@ -128,7 +124,6 @@
       </div>
       <img src="./Images/foodiesfeed.com_preparing-sandwich-with-hummus-spread-and-fresh-vegetables.jpg" class="card-img-about" alt="Table with hummus and vegetables">
     </div>
-  
   <!--Contact section-->
   <div class="mb-3" id="Contact-us">
     <h6 class="contact-section-title">Leave us a message!</h6>
