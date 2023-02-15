@@ -132,17 +132,21 @@ $("#subButton").on("click", function () {
     method: "GET"
   })
     .then(function(response) {
-      // console.log(response);
+      console.log(response);
       let recipes = response.hits;
-      for (let i = 10; i < recipes.length; i++) {
-        if(recipes[i] <= 10 ) {
-          let foodLabel = cars[i].recipe.label;
-          console.log(foodLabel);
+      for (let i = 0; i < recipes.length-11; i++) {
+        console.log(recipes[i].recipe.label);
+        console.log(recipes[i].recipe.calories);
+        console.log(recipes[i].recipe.ingredientLines);
+        console.log(recipes[i].recipe.healthLabels);
+        console.log(recipes[i].recipe.totalTime);
+        let nutrientsinfo = recipes[i].recipe.totalDaily;
+
         }
-        console.log(recipes)
         
         
-      }
+        
+    
       
       // console.log(response.hits[0].recipe);
       // console.log(response.hits[0].recipe.label);
