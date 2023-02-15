@@ -21,6 +21,7 @@
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
+    
       }
     </style>
   </head>
@@ -85,16 +86,24 @@
           </div>
           
         </div>
-      </div>
+  </div>
     <!--Index field-->
-    <br/>
-    <form class="row row-cols-lg-auto g-3 align-items-center">
-        <div class="col-3">
-          <label class="visually-hidden" for="inlineFormInputGroupUsername">Type your favourite food...</label>
-          <div class="input-group">
-            <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="Type your favourite food...">
-          </div>
-        </div>
+<br/>
+  <div class="row row-cols-lg-auto g-3 align-items-center">
+    <h1 class="page-title">Type your favourite food...</h1>
+    <div class="container-fluid" id="contentNutrition">
+    
+          
+      <input type="text" class="col-sm-6 control-label" id="foodInput" placeholder="Type your favourite food...">
+      <button type="submit" class="btn btn-primary" id="nutrition-valueBtn">Submit</button>
+      <div class="row-col-sm-9" id="diplay-nutrition">
+        <h3 class ="title bolder " id="nutritious-title"></h3>
+        <p>Calorie: <span class="current" id="DisplayCalorie"></span></p>
+        <p>Diet Lables: <span class="current" id="DisplayDietLables"></span></p>
+   
+      </div>
+  </div>    
+     
       
         <!-- <div class="col-12">
           <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
@@ -109,12 +118,18 @@
           <!-- </select> -->
         <!-- </div> -->
       
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
+        
+         
+        
+    </div>
+<br/>
+
     <div id="images"></div>
   </body>
+  <br/>
+  <br/>
+  <br/>
+
    <!--Card: About us-->
     <div class="card" id="About-us">
       <div class="card-body-about">
