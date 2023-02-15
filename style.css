@@ -53,3 +53,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* Suggested Meals Css */
+#suggested-meal-title{
+  color: orange;
+}

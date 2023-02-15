@@ -136,40 +136,47 @@ $("#subButton").on("click", function () {
       console.log(response);
       let recipes = response.hits;
       for (let i = 0; i < recipes.length-11; i++) {
-        let suggestedMealThumbnail = recipes[i].recipe.images.SMALL.url;
+        // Images
+        let suggestedMealThumbnail = recipes[i].recipe.images.THUMBNAIL.url;
         // console.log(suggestedMealThumbnail);
         suggestedMealImage.attr("src", suggestedMealThumbnail);
         suggestedMealImage.attr("width", 300);
         suggestedMealImage.attr("height", 300); // having issues with displaying the image
 
+        // Meal Label
         let suggestedMeal = recipes[i].recipe.label;
         let suggestedMealtitle = $("<h1></h1>");
         suggestedMealtitle.empty().text(suggestedMeal);
         suggestedMealtitle.appendTo("#suggested-meal-title");
 
+        // calories
+
         let suggestedMealCalorie = recipes[i].recipe.calories; // need to do a split function here
-        console.log((suggestedMealCalorie / 1000).toFixed(2) + " kcal");                              //use devision to change the cal value
+        caloriesDisplay = ('Calories :'+ (suggestedMealCalorie / 1000).toFixed(2) + " kcal");                              //use devision to change the cal value
         let mealCalorie = $("<p></p>");
-        mealCalorie.empty().text(suggestedMealCalorie);
+        mealCalorie.empty().text(caloriesDisplay);
         mealCalorie.appendTo("#suggested-meal-nutrient-info");
 
+        // ingredients 
+
         let suggestedMealIngredient = recipes[i].recipe.ingredientLines[1];
-        // console.log(suggestedMealIngredient);
+        console.log(suggestedMealIngredient);
         let mealIngredient = $("<div></div>");
-        mealIngredient.empty().text(suggestedMealIngredient);
-        mealIngredient.appendTo("#suggested-meal-Ingreident");
+        mealIngredient.text(suggestedMealIngredient);
+        mealIngredient.appendTo("#MealInstructions");
 
         let nutrientsinfo = recipes[i].recipe.digest[0];
         let nutrientsinfo2 = recipes[i].recipe.digest[1];
         let nutrientsinfo3 = recipes[i].recipe.digest[2];
         console.log(nutrientsinfo);
-        console.log(nutrientsinfo2);
-        console.log(nutrientsinfo3);
-        console.log(parseInt(nutrientsinfo.total));
+        let carbsNutrient = "Carbs " + parseInt(nutrientsinfo2.total)  + ':' ;
+        console.log(carbsNutrient);
+        let proteinNutrient = "Protein :" + parseInt(nutrientsinfo3.total) + ':' ;
+        let FatNutrient = 'Fat :' + parseInt(nutrientsinfo.total) + ':' ;
+        let totalNutrients = carbsNutrient +   proteinNutrient  +  FatNutrient
+        console.log(totalNutrients);
 
-        let calciumlabel = recipes[i].recipe.totalDaily.CA.label;
-        // console.log(calciumlabel);
-        let calciumquantity = recipes[i].recipe.totalDaily.CA.label;
+      
         // for (let i = 0; i < nutrientsinfo.length-10; i++) {
         //   console.log(nutrientsinfo);
 
