@@ -88,7 +88,7 @@ body {
   justify-content: center;
 }
 
-/* ensures contentNutrition is positioned to the center and adds felx display */
+/* ensures contentNutrition is positioned to the center and adds flex display */
 .contentNutrition {
   display: flex;
   align-items: center;
@@ -96,7 +96,7 @@ body {
   justify-content: center;
 }
 
-/* media query to ensurer that format is appropriate for mobile screens */
+/* media query to ensurer that format the foodInput is appropriate for mobile screens */
 @media (min-width: 600px) {
   .col-sm-6 {
     flex: 0 0 auto;
@@ -104,6 +104,7 @@ body {
   }
 }
 
+/* media query to ensurer that the page title format is appropriate for mobile screens */
 @media screen and (max-width: 600px) {
   .page-title {
     color: rgb(88, 82, 82);
