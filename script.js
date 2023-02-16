@@ -11,9 +11,8 @@ $("#random-meal").on("click", function (e) {
   }).then(function (response) {
     let meals = response.meals;
 
-    let randomMeal =
-      response.meals[0].strMeal +
-      " " +
+    let randomMeal = response.meals[0].strMeal + " " + ":👏:" + ":👏:" + "😋";
+
 
       "👏" +
       "👏" +
@@ -225,50 +224,73 @@ function getEmailFromLocalStorage() {
 }
 
 //Recipe API
-$("#subButton").on("click", function () {
+$("#suggestedsearchButton").on("click", function () {
+  event.preventDefault();
   var userFoodChoice = document.getElementById("userInputField").value;
   console.log(userFoodChoice);
   var queryURL =
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
     userFoodChoice +
-    "&app_id=299b322d&app_key=c2e37f835315905a8c42461585f9c738&imageSize=THUMBNAIL&random=true";
+    "&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de&imageSize=THUMBNAIL&random=true";
   $.ajax({
     url: queryURL,
-    method: "GET"
-  })
-    .then(function(response) {
-      console.log(response);
-      let recipes = response.hits;
-      for (let i = 0; i < recipes.length-11; i++) {
-        let suggestedMealThumbnail = recipes[i].recipe.images.SMALL.url;
-        console.log(suggestedMealThumbnail);
-        suggestedMealImage.attr("src", suggestedMealThumbnail);
-        suggestedMealImage.attr("width", 300);
-        suggestedMealImage.attr("height", 300); // having issues with displaying the image
-        let suggestedMeal = recipes[i].recipe.label;
-        let suggestedMealtitle = $("<h1></h1>");
-        suggestedMealtitle.empty().text(suggestedMeal);
-        suggestedMealtitle.appendTo("#suggested-meal-title");
-        let suggestedMealCalorie = recipes[i].recipe.calories + "kcal"; // need to do a split function here
-        console.log(suggestedMealCalorie);                              //use devision to change the cal value
-        let mealCalorie = $("<p></p>");
-        mealCalorie.empty().text(suggestedMealCalorie);
-        mealCalorie.appendTo("#suggested-meal-nutrient-info");
-        // console.log(recipes[i].recipe.ingredientLines);
-        // console.log(recipes[i].recipe.totalTime);
-        // let nutrientsinfo = recipes[i].recipe.totalDaily;
-        // console.log(nutrientsinfo);
-        // for (let i = 0; i < nutrientsinfo.length; i++) {
-        // //   console.log(nutrientsinfo[i]);
-        // }
-         }
-      // console.log(response.hits[0].recipe);
-      // console.log(response.hits[0].recipe.label);
-      // console.log(response.hits[0].recipe.calories);
-      // console.log(response.hits[0].recipe.healthLabels);
-      // console.log(response.hits[0].recipe.ingredients);
-    });
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
+    //recipe label
+    let suggestedMeal = response.hits[0].recipe.label;
+    console.log(suggestedMeal);
+    let suggestedMealtitle = $("<h3></h3>");
+    suggestedMealtitle.empty().text(suggestedMeal);
+    suggestedMealtitle.appendTo("#suggested-meal-title");
+    //meal image
+    let suggestedMealPic = response.hits[0].recipe.images.SMALL.url;
+    console.log(suggestedMealPic);
+
+    suggestedMealImage.attr("src", suggestedMealPic);
+
+    //meal instructions
+    let suggestedMealIngredient = response.hits[0].recipe.ingredientLines;
+    console.log(suggestedMealIngredient);
+    let mealIngredient = $("<div></div>");
+    mealIngredient.text(suggestedMealIngredient);
+    mealIngredient.appendTo("#MealInstructions");
+
+    //meal nutrients
+
+    let nutrientsinfo = response.hits[0].recipe.digest[0];
+    let nutrientsinfo2 = response.hits[0].recipe.digest[1];
+    let nutrientsinfo3 = response.hits[0].recipe.digest[2];
+    console.log(nutrientsinfo);
+    let carbsNutrient = "Carbs " + "=" + parseInt(nutrientsinfo2.total + " : ");
+    console.log(carbsNutrient);
+    let proteinNutrient =
+      "  Protein " + "=" + parseInt(nutrientsinfo3.total) + "  ";
+    let FatNutrient = "Fat :" + "=" + parseInt(nutrientsinfo.total);
+    let totalNutrients = carbsNutrient + proteinNutrient + FatNutrient;
+    let nutrients = $("<div></div>");
+    nutrients.text(totalNutrients);
+    nutrients.appendTo("#suggested-meal-nutrient-info");
+  });
 });
+// create email input variables and a function that adds the email information to the local storage and console log
+var typeEmailInput = "";
+var typeEmailInput = $("exampleFormControlInput1");
+function addEmailInfo(event) {
+  event.preventDefault();
+  emailAddress = document.getElementById("exampleFormControlInput1").value;
+  console.log(emailAddress);
+  localStorage.setItem("emailAddress", JSON.stringify(emailAddress));
+}
+
+document.getElementById("emailForm").addEventListener("submit", addEmailInfo);
+//this function gets the email information from local storage and provides its value which is stored on the console log
+function getEmailFromLocalStorage() {
+  let emailInput = document.getElementById("exampleFormControlInput1").value;
+  console.log(emailInput);
+}
+
+
   // //Nutrition values API
   // $("#nutrition-value").on("click", function () {
   //   var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=pasta&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de";
