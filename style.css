@@ -50,6 +50,12 @@ body {
   color: azure;
 }
 
+#random-meal-img {
+  border-style: hidden;
+  width: 300;
+  height: 300;
+}
+
 .contact-section-title {
   color: rgb(255, 255, 255);
   font-weight: bold;
