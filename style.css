@@ -97,6 +97,13 @@ body {
 }
 
 /* media query to ensurer that format is appropriate for mobile screens */
+@media (min-width: 600px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 67%;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .page-title {
     color: rgb(88, 82, 82);
