@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -38,10 +37,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="#About-us">About us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#Contact-us">Contact</a>
           </li>
         </ul>
       </div>
@@ -63,26 +62,65 @@
           </div>
           <iframe id="ramdom-meal-video" class="col random-meal-video">
           </iframe>
-        </div>
-        <div class="row">
-          <div id="random-meal-ingredients" class="col">
-            <div class="row">
-              <div class="col">
-                <h4>Measurement</h4>
-                <ul id="randomMealMeasurement">
-                </ul>
-              </div>
-              <div class="col">
-                <h5>Ingredient</h5>
-                <ul id="randomMealIngredient">
-                </ul>
+<div>
+  <!-- Suggested meal field -->
+  <div id="suggested-meal-options" class="container text-center">
+    <h2 class="suggested-meal-name">
+        Suggested Meal: <span id="suggested-meal-title"></span>
+      </h2>
+  <div id="meal-image meal-info"  class="row">
+    <img src="" alt="" id="suggested-meal-img" width="300" height="300" />
+    <div id="suggested-meal-nutrient-info" class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    <!-- Force next columns to break to new line -->
+    <div class="w-100"></div>
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+    <div class="col-6 col-sm-3">.col-6 .col-sm-3</div>
+  </div>
+</div>
+
+<!-- <!--Random meal-> -->
+
+    <div class="container-fluid" id="content">
+
+      <h1 class="page-title">What do you feel like eating?</h1>
+
+      <div class="input-group mb-3">
+          <button id="random-meal" class="meal btn btn-primary" >Random meal</button>
+      </div>
+
+      <section id="randomMealOption">
+        <h2 class="random-meal-name text-white">
+          Your random meal is: <span id="meal-title"></span>
+        </h2>
+        <div class="container text-center random-meal-info" id="randomMealInfo">
+          <div class="row">
+            <div class="col">
+              <img src="" alt="" id="random-meal-img" width="300" height="300" />
+            </div>
+            <iframe id="ramdom-meal-video" class="col random-meal-video">
+            </iframe>
+          </div>
+          <div class="row">
+            <div id="random-meal-ingredients" class="col">
+              <div class="row">
+                <div class="col">
+                  <h4>Measurement</h4>
+                  <ul id="randomMealMeasurement">
+                  </ul>
+                </div>
+                <div class="col">
+                  <h5>Ingredient</h5>
+                  <ul id="randomMealIngredient">
+                  </ul>
+                </div>
               </div>
             </div>
+            <div id="random-meal-instructions" class="col">
+              <h4>Meal Method</h4>
+              <div class="instructions"></div>
+            </div>
           </div>
-          <div id="random-meal-instructions" class="col">
-            <h4>Meal Method</h4>
-            <div class="instructions"></div>
-          </div>
+
 
         </div>
       </div>
@@ -101,22 +139,6 @@
 
           </div>
         </div>
-
-
-        <!-- <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-          <select class="form-select" id="inlineFormSelectPref">
-            <option selected>Choose a category</option>
-            <option value="1">Italian</option>
-            <option value="2">Chinese</option>
-            <option value="3">Sushi</option>
-            <option value="4">Caribbean</option>
-            <option value="5">Spanish</option>
-            <option value="6">Veggie</option> -->
-        <!-- </select> -->
-        <!-- </div> -->
-      </div>
-      <br />
 
       <div id="images"></div>
 </body>
@@ -167,4 +189,47 @@
 <script src="script.js"></script>
 </body>
 
+
+        </div>
+
+
+      </div>
+      
+
+  </body>
+
+   <!--Card: About us-->
+    <div class="card" id="About-us">
+      <div class="card-body-about">
+        <h5 class="card-title">About us</h5>
+        <p class="card-text">We were born as a result of a very hungry bunch of students who wanted to combine delicious recipes with a good nutritious variety of ingredients. We know how hard it is to find good recipes in one place, that is why we created The Foodie Guide so that you could have a bunch of choices, with all the information that you need.</p>
+      </div>
+      <img src="./Images/foodiesfeed.com_preparing-sandwich-with-hummus-spread-and-fresh-vegetables.jpg" class="card-img-about" alt="Table with hummus and vegetables">
+    </div>
+  <!--Contact section-->
+  <div class="mb-3" id="Contact-us">
+    <h6 class="contact-section-title">Leave us a message!</h6>
+    <p class="contact-section-text">Fill in your details and we will get back to you</p>
+    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Tell us how we did</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+    <!--Bootstrap links-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+      integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+      crossorigin="anonymous"
+    ></script>
+    <!--Ajax and Javascript links-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </body>
 </html>

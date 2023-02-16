@@ -1,7 +1,7 @@
 
 # The Foodie Guide
 
-We created this project as a tool to search for the best recipes based on my craving. What makes us different is that here you can find nutritional information and recipes based on one particual item ( bread for example) or a whole meak (Pasta alla Gricia for exmample). On top of that, you can search for a random meal if you do not know what you want, a video on how to make that meal will also be avaible to the user.
+We created this project as a tool to search for the best recipes based on my craving. What makes us different is that here you can find nutritional information and recipes based on one particual item or a whole meal. On top of that, you can search for a random meal if you do not know what you want, a video on how to make that meal will also be available to the user.
 
 # Usage
 Simply fill in the food or ingredient you are craving in the search bar and a list of the best recipes will appear, with calorie counts per recipe. There will be a 2nd feature allowing to request a random recipe, this feature also comes with a video suggestion on how to make the recipe.
