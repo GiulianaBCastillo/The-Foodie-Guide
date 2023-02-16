@@ -1,5 +1,5 @@
-
-.random-meal-video,
+/* #random-meal-video, */
+#inputgroup1,
 .input-group,
 .meal {
 
@@ -33,23 +33,8 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: 70px;
   margin-top: 30px;
-
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 70px;
-  margin-top: 30px;
 }
 
-
-    display: flex;
-    color:whitesmoke;
-    align-items: center;
-    justify-content: center;
-    padding-top: 280px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 70px;
-    margin-top: 30px;
-
-}
 
 /* test the margin-top pixel above number to see if the wording can be better positioned for all screen sizes and redwonload vs code get instructor to help because the explorer does not work*/
 .row row-cols-lg-auto g-3 align-items-center {
@@ -125,21 +110,7 @@ body {
 }
 
 /* footer edits, about us and contact us */
-*
-  hides
-  the
-  image
-  outline
-  and
-  allows
-  image
-  to
-  display
-  without
-  an
-  empty
-  border
-  */
+
   #random-meal-img {
   border-style: hidden;
   width: 300;
@@ -206,4 +177,3 @@ body {
     color: rgb(88, 82, 82);
   }
 }
-
