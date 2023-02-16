@@ -116,7 +116,7 @@ $("#random-meal").on("click", function (e) {
 
 //Recipe API
 $("#suggestedsearchButton").on("click", function () {
-  event.preventDefault()
+  event.preventDefault();
   var userFoodChoice = document.getElementById("userInputField").value;
   console.log(userFoodChoice);
   var queryURL =
@@ -163,8 +163,6 @@ $("#suggestedsearchButton").on("click", function () {
     nutrients.text(totalNutrients);
     nutrients.appendTo("#suggested-meal-nutrient-info");
   });
-
-  
 });
   // //Nutrition values API
   // $("#nutrition-value").on("click", function () {

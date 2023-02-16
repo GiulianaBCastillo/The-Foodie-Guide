@@ -50,3 +50,12 @@ body {
   justify-content: center;
 }
 
+#suggested-meal-title {
+  color: orange;
+  position: relative;
+}
+
+#suggested-meal-img{
+    width: auto ;
+}
+
