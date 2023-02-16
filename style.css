@@ -1,8 +1,9 @@
 
-
-
+/* positioning of randon meal video and setting a display flex for different screen size */
+.random-meal-video {
 
 .random-meal-video, .input-group, .meal {
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,13 +12,37 @@
   min-width: 500px !important;
   min-height: 500px !important;
 } */
+
+
+/* no style for lists */
+ul {
+  list-style: none !important;
+}
+
+/* body background colour */
+
 ul{
   list-style: none !important;
 }
+
 body {
-    background-color: rgb(222, 222, 89);
+  background-color: rgb(222, 222, 89);
 }
+
+/* page title colour  styles and position and fonts are set */
 .page-title {
+
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  padding-top: 280px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 70px;
+  margin-top: 30px;
+}
+
+
     display: flex;
     color:whitesmoke;
     align-items: center;
@@ -27,26 +52,91 @@ body {
     font-size: 70px;
     margin-top: 30px;
 }
+
 /* test the margin-top pixel above number to see if the wording can be better positioned for all screen sizes and redwonload vs code get instructor to help because the explorer does not work*/
 .row row-cols-lg-auto g-3 align-items-center {
-    display:flex;
-    height: 300px;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .form-check-label {
-    color: white;
+  color: white;
 }
+
+
+/* navigation bar colour set to darkgray */
+
 .navbar {
-    background-color: darkgray;
+  background-color: darkgray;
 }
+
+
+/* row colour set to azure */
+.row {
+  color: azure;
+}
+
+/* hides the image outline and allows image to display without an empty border */
+#random-meal-img {
+  border-style: hidden;
+  width: 300;
+  height: 300;
+}
+
+/* styling for the screen title */
+.contact-section-title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: large;
+}
+
+/* places the image source behind the text for the contact us and about us section and styles each card with a rounded border and background */
+.mb-3 {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius: 3px;
+  background-image: url(./Images/foodiesfeed.com_preparing-sandwich-with-hummus-spread-and-fresh-vegetables.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* ensures content is positioned to the center and adds felx display */
+.content {
+=======
 .row{
   color: azure;
 }
 .content{
+
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+
+/* ensures contentNutrition is positioned to the center and adds flex display */
+.contentNutrition {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/* media query to ensurer that format the foodInput is appropriate for mobile screens */
+@media (min-width: 600px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 67%;
+  }
+}
+
+/* media query to ensurer that the page title format is appropriate for mobile screens */
+@media screen and (max-width: 600px) {
+  .page-title {
+    color: rgb(88, 82, 82);
+  }
 }
 
