@@ -56,7 +56,7 @@ body {
   color: azure;
 }
 
-/* hides the image outline and allows image to disaply without a border */
+/* hides the image outline and allows image to display without an empty border */
 #random-meal-img {
   border-style: hidden;
   width: 300;

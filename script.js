@@ -179,10 +179,10 @@ $("#nutrition-valueBtn").on("click", function searchResult(food) {
 
 
     //Display the result
-    const calorie = response.calorie;
-    const dietLables = response.dietLables;
-    $("#DisplayCalorie").html(response.calorie);
-    $("#DisplayDietLables").html(response.dietLables);
+    const calories = response.calories;
+    const dietLabels = response.dietLabels;
+    $("#DisplayCalories").html(response.calories);
+    $("#DisplayDietLabels").html(response.dietLabels);
 
 
   });
