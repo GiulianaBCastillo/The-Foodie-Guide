@@ -9,52 +9,52 @@
   min-height: 500px !important;
 } */
 
-ul{
+ul {
   list-style: none !important;
 }
 
 body {
-    background-color: rgb(222, 222, 89);
+  background-color: rgb(222, 222, 89);
 }
 .page-title {
-    display: flex;
-    color:whitesmoke;
-    align-items: center;
-    justify-content: center;
-    padding-top: 280px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 70px;
-    margin-top: 30px; 
-} 
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  padding-top: 280px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 70px;
+  margin-top: 30px;
+}
 /* test the margin-top pixel above number to see if the wording can be better positioned for all screen sizes and redwonload vs code get instructor to help because the explorer does not work*/
 
 .row row-cols-lg-auto g-3 align-items-center {
-    display:flex;
-    height: 300px;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .form-check-label {
-    color: white;
+  color: white;
 }
 
 .navbar {
-    background-color: darkgray;
+  background-color: darkgray;
 }
 
-.row{
+.row {
   color: azure;
 }
 
-.content{
+.content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 /* Suggested Meals Css */
-#suggested-meal-title{
+#suggested-meal-title {
   color: orange;
 }
