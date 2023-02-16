@@ -11,12 +11,7 @@ $("#random-meal").on("click", function (e) {
   }).then(function (response) {
     let meals = response.meals;
 
-    let randomMeal =
-      response.meals[0].strMeal +
-      " " +
-      ":clap:" +
-      ":clap:" +
-      ":heart_eyes:";
+    let randomMeal = response.meals[0].strMeal + " " + ":👏:" + ":👏:" + "😋";
 
     // console.log(randomMeal);
     var randomMealtitle = $("h2");
@@ -164,6 +159,24 @@ $("#suggestedsearchButton").on("click", function () {
     nutrients.appendTo("#suggested-meal-nutrient-info");
   });
 });
+// create email input variables and a function that adds the email information to the local storage and console log
+var typeEmailInput = "";
+var typeEmailInput = $("exampleFormControlInput1");
+function addEmailInfo(event) {
+  event.preventDefault();
+  emailAddress = document.getElementById("exampleFormControlInput1").value;
+  console.log(emailAddress);
+  localStorage.setItem("emailAddress", JSON.stringify(emailAddress));
+}
+
+document.getElementById("emailForm").addEventListener("submit", addEmailInfo);
+//this function gets the email information from local storage and provides its value which is stored on the console log
+function getEmailFromLocalStorage() {
+  let emailInput = document.getElementById("exampleFormControlInput1").value;
+  console.log(emailInput);
+}
+
+
   // //Nutrition values API
   // $("#nutrition-value").on("click", function () {
   //   var queryURL = "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=pasta&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de";

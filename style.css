@@ -59,3 +59,58 @@ body {
     width: auto ;
 }
 
+/* footer edits, about us and contact us */
+* hides the image outline and allows image to display without an empty border */
+#random-meal-img {
+  border-style: hidden;
+  width: 300;
+  height: 300;
+}
+
+/* styling for the screen title */
+.contact-section-title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: large;
+}
+
+/* places the image source behind the text for the contact us and about us section and styles each card with a rounded border and background */
+.mb-3 {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius: 3px;
+  background-image: url(./Images/foodiesfeed.com_preparing-sandwich-with-hummus-spread-and-fresh-vegetables.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* ensures content is positioned to the center and adds felx display */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ensures contentNutrition is positioned to the center and adds flex display */
+.contentNutrition {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+}
+
+/* media query to ensurer that format the foodInput is appropriate for mobile screens */
+@media (min-width: 600px) {
+  .col-sm-6 {
+    flex: 0 0 auto;
+    width: 67%;
+  }
+}
+
+/* media query to ensurer that the page title format is appropriate for mobile screens */
+@media screen and (max-width: 600px) {
+  .page-title {
+    color: rgb(88, 82, 82);
+  }
+}
