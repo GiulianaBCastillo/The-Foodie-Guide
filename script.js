@@ -121,13 +121,14 @@ $("#random-meal").on("click", function (e) {
   // $("#randomMealInfo").empty();
 });
 //Recipe API
-$("#subButton").on("click", function () {
+$("#suggestedsearchButton").on("click", function () {
+  event.preventDefault()
   var userFoodChoice = document.getElementById("userInputField").value;
   console.log(userFoodChoice);
   var queryURL =
     "https://api.edamam.com/api/recipes/v2?type=public&q=" +
     userFoodChoice +
-    "&app_id=299b322d&app_key=c2e37f835315905a8c42461585f9c738&imageSize=THUMBNAIL&random=true";
+    "&app_id=36865b74&app_key=9cf0e140b88b31c2052ee297822d09de&imageSize=THUMBNAIL&random=true";
   $.ajax({
     url: queryURL,
     method: "GET",
