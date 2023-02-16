@@ -59,6 +59,11 @@ body {
 .mb-3 {
   color: rgb(255, 255, 255);
   font-weight: bold;
+  border-radius: 3px;
+  background-image: url(./Images/foodiesfeed.com_preparing-sandwich-with-hummus-spread-and-fresh-vegetables.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 .content {
