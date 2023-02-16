@@ -57,4 +57,10 @@ body {
 /* Suggested Meals Css */
 #suggested-meal-title {
   color: orange;
+  position: relative;
 }
+
+#suggested-meal-img{
+    width: auto ;
+}
+
