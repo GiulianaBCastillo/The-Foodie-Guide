@@ -1,3 +1,4 @@
+/* positioning of randon meal video and setting a display flex for different screen size */
 .random-meal-video {
   display: flex;
   justify-content: center;
@@ -9,14 +10,17 @@
   min-height: 500px !important;
 } */
 
+/* no style for lists */
 ul {
   list-style: none !important;
 }
 
+/* body background colour */
 body {
   background-color: rgb(222, 222, 89);
 }
 
+/* page title colour  styles and position and fonts are set */
 .page-title {
   display: flex;
   color: whitesmoke;
@@ -42,26 +46,31 @@ body {
   color: white;
 }
 
+/* navigation bar colour set to darkgray */
 .navbar {
   background-color: darkgray;
 }
 
+/* row colour set to azure */
 .row {
   color: azure;
 }
 
+/* hides the image outline and allows image to disaply without a border */
 #random-meal-img {
   border-style: hidden;
   width: 300;
   height: 300;
 }
 
+/* styling for the screen title */
 .contact-section-title {
   color: rgb(255, 255, 255);
   font-weight: bold;
   font-size: large;
 }
 
+/* places the image source behind the text for the contact us and about us section and styles each card with a rounded border and background */
 .mb-3 {
   color: rgb(255, 255, 255);
   font-weight: bold;
@@ -72,12 +81,14 @@ body {
   background-size: cover;
 }
 
+/* ensures content is positioned to the center and adds felx display */
 .content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
+/* ensures contentNutrition is positioned to the center and adds felx display */
 .contentNutrition {
   display: flex;
   align-items: center;
@@ -85,6 +96,7 @@ body {
   justify-content: center;
 }
 
+/* media query to ensurer that format is appropriate for mobile screens */
 @media screen and (max-width: 600px) {
   .page-title {
     color: rgb(88, 82, 82);
