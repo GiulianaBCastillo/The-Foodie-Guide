@@ -9,55 +9,73 @@
   min-height: 500px !important;
 } */
 
-ul{
+ul {
   list-style: none !important;
 }
 
 body {
-    background-color: rgb(222, 222, 89);
+  background-color: rgb(222, 222, 89);
 }
+
 .page-title {
-    display: flex;
-    color:whitesmoke;
-    align-items: center;
-    justify-content: center;
-    padding-top: 280px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 70px;
-    margin-top: 30px; 
-} 
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  padding-top: 280px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 70px;
+  margin-top: 30px;
+}
+
 /* test the margin-top pixel above number to see if the wording can be better positioned for all screen sizes and redwonload vs code get instructor to help because the explorer does not work*/
 
 .row row-cols-lg-auto g-3 align-items-center {
-    display:flex;
-    height: 300px;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 
 .form-check-label {
-    color: white;
+  color: white;
 }
 
 .navbar {
-    background-color: darkgray;
+  background-color: darkgray;
 }
 
-.row{
+.row {
   color: azure;
 }
 
-.content{
+.contact-section-title {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: large;
+}
+
+.mb-3 {
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+
+.content {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-.contentNutrition{
+.contentNutrition {
   display: flex;
   align-items: center;
   align-content: center;
   justify-content: center;
+}
+
+@media screen and (max-width: 600px) {
+  .page-title {
+    color: rgb(88, 82, 82);
+  }
 }
