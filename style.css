@@ -1,8 +1,6 @@
-
-
-
-
-.random-meal-video, .input-group, .meal {
+.random-meal-video,
+.input-group,
+.meal {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,40 +9,40 @@
   min-width: 500px !important;
   min-height: 500px !important;
 } */
-ul{
+ul {
   list-style: none !important;
 }
 body {
-    background-color: rgb(222, 222, 89);
+  background-color: rgb(222, 222, 89);
 }
 .page-title {
-    display: flex;
-    color:whitesmoke;
-    align-items: center;
-    justify-content: center;
-    padding-top: 280px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 70px;
-    margin-top: 30px;
+  display: flex;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  padding-top: 280px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: 70px;
+  margin-top: 30px;
 }
 /* test the margin-top pixel above number to see if the wording can be better positioned for all screen sizes and redwonload vs code get instructor to help because the explorer does not work*/
 .row row-cols-lg-auto g-3 align-items-center {
-    display:flex;
-    height: 300px;
-    align-items: center;
-    align-content: center;
-    justify-content: center;
+  display: flex;
+  height: 300px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
 }
 .form-check-label {
-    color: white;
+  color: white;
 }
 .navbar {
-    background-color: darkgray;
+  background-color: darkgray;
 }
-.row{
+.row {
   color: azure;
 }
-.content{
+.content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,13 +53,27 @@ body {
   position: relative;
 }
 
-#suggested-meal-img{
-    width: auto ;
+#suggested-meal-img {
+  width: auto;
 }
 
 /* footer edits, about us and contact us */
-* hides the image outline and allows image to display without an empty border */
-#random-meal-img {
+*
+  hides
+  the
+  image
+  outline
+  and
+  allows
+  image
+  to
+  display
+  without
+  an
+  empty
+  border
+  */
+  #random-meal-img {
   border-style: hidden;
   width: 300;
   height: 300;
@@ -90,6 +102,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#suggested-meal-img {
+  border-style: hidden;
+  width: 300;
+  height: 300;
+}
+
+#random-meal-img {
+  border-style: hidden;
+  width: 300;
+  height: 300;
 }
 
 /* ensures contentNutrition is positioned to the center and adds flex display */
