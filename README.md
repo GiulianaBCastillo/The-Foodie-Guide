@@ -3,6 +3,11 @@
 
 We created this project as a tool to search for the best recipes based on my craving. What makes us different is that here you can find nutritional information and recipes based on one particual item or a whole meal. On top of that, you can search for a random meal if you do not know what you want, a video on how to make that meal will also be available to the user.
 
+<img width="1440" alt="Captura de Pantalla 2023-02-24 a las 19 02 40" src="https://user-images.githubusercontent.com/118186099/221268926-a7e8efb4-7466-4004-bd79-252e4e453d6c.png">
+<img width="1440" alt="Captura de Pantalla 2023-02-24 a las 19 02 58" src="https://user-images.githubusercontent.com/118186099/221268950-70fb69d3-b167-45f4-8448-ff2963c5faaa.png">
+
+https://giulianabcastillo.github.io/The-Foodie-Guide/
+
 # Usage
 Simply fill in the food or ingredient you are craving in the search bar and a list of the best recipes will appear, with calorie counts per recipe. There will be a 2nd feature allowing to request a random recipe, this feature also comes with a video suggestion on how to make the recipe.
 
